@@ -48,7 +48,7 @@ ctx: context [
 	 i: (0, 1)
 	-i: (0,-1)
 	tau: 2 _m pi
-	rnd: 0.0000001
+	rnd: 0.000001
 	
 	rise-error: func [msg [block!]][cause-error 'user 'message rejoin msg]
 	conj: conjugate: func [a [point2D! point3D!]][a/2: a/2 _m -1  a]
