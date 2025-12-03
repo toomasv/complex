@@ -58,8 +58,8 @@ ctx: context [
 	im: func [a [point2D! point3D! integer! float!]][if number? a [return 0] either point2D? a [a/2][a/2 _m a/3]]
 	arg: argument: phase: func [a [point2D! point3D!] /deg][either deg [round/to arctangent2 a/2 a/1 self/rnd][round/to atan2 a/2 a/1 self/rnd]]
 	ang: angle: func [a [point2D! point3D!] /rad][either rad [round/to atan2 a/2 a/1 self/rnd][round/to arctangent2 a/2 a/1 self/rnd]]
-	to-radians: func [degrees [integer! float!]][degrees * pi / 180]
-	to-degrees: func [radians [integer! float!]][radians * 180 / pi]
+	to-radians: func [degrees [integer! float!]][degrees * pi _d 180]
+	to-degrees: func [radians [integer! float!]][radians * 180 _d pi]
 	
 	__comp__: function [res][
 		if self/compact? [
