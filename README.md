@@ -17,11 +17,11 @@ complex [to-angular/deg e ** (i * pi / 3)] ;== (1, 60)
 x: complex [e ** i] ;== (0.5403023, 0.841471)
 complex [ln x] ;== (0, 1)
 complex [i = ln x] ;== true
-complex [(to-complex/deg 1 60) ** 1/3] ;== (0.9396926, 0.3420201)
-complex [(0.9396926, 0.3420201) ** 3] ;== (0.5000001, 0.8660253)
-complex [to-angular/deg (0.9396926, 0.3420201) ** 3] ;== (0.9999999, 59.99999)
+x: complex [(to-complex/deg 1 60) ** 1/3] ;== (0.9396926, 0.3420201)
+complex [x ** 3] ;== (0.5000001, 0.8660253)
+complex [to-angular/deg x ** 3] ;== (0.9999999, 59.99999)
 ctx/rnd: 0.0001 ;== 0.0001
-complex [to-angular/deg (0.9396926, 0.3420201) ** 3] ;== (1, 60)
+complex [to-angular/deg x ** 3] ;== (1, 60)
 ctx/rnd: 0.0000001 ;== 1.0e-7
 x: complex [root/all (to-complex/deg 1 60) 3] ;== [(0.9396926, 0.3420201) (-0.7660444, 0.6427876) (-0.1736481, -0.9848078)]
 ctx/rnd: 0.0001
