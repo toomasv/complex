@@ -61,7 +61,7 @@ ctx: context [
 	to-radians: func [degrees [integer! float!]][degrees * pi _d 180]
 	to-degrees: func [radians [integer! float!]][radians * 180 _d pi]
 	
-	__comp__: function [res][
+	__comp__: __pack__: function [res][
 		if self/compact? [
 			case [
 				all [point2D? :res  0 = res/2][return res/1]
