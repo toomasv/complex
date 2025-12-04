@@ -28,7 +28,7 @@ ctx/rnd: 0.0001
 complex [repeat n length? x [prin [to-angular/deg x/:n ** 3 " "]] print ""] ; (1, 60)  (1, 60)  (1, 60)
 x: complex [e ** (0.5,1)] ;== (0.8908079, 1.387351)
 complex [ln x] ;== (0.5000001, 1)
-complex [(round/to i ** i 0.000001) = (round/to e ** (-1 * pi / 2) 0.000001)] ;== true
+complex [(i ** i) ~ (e ** (-pi/2))] ;== true
 x: complex/compact [(1,1) ** (1,1)] ;== (0.2739572, 0.5837007)
-y: complex [(sqrt 2) * (e ** (-1 * pi / 4)) * to-cx reduce [cos a: ((pi / 4) + ((log-e 2) / 2)) sin a]] ;== (0.2739573, 0.5837007)
+y: complex [(sqrt 2) * (e ** (-pi / 4)) * to-cx reduce [cos a: (pi / 4) + ((log-e 2) / 2) sin a]] ;== (0.2739573, 0.5837007)
 x = y ;== true
