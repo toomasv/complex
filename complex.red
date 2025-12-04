@@ -71,6 +71,20 @@ ctx: context [
 		res
 	]
 
+	almost: func [
+		a [point2D! point3D! integer! float!] 
+		b [point2D! point3D! integer! float!]
+	][
+		case [
+			all [number? a number? b][self/rnd >= absolute a - b]
+			all [number? a not number? b][b: to-cx b all [b/2 ~ 0  a ~ b/1]]
+			all [not number? a number? b][a: to-cx a all [a/2 ~ 0  b ~ a/1]]
+			true [a: to-cx a b: to-cx b all [a/1 ~ b/1  a/2 ~ b/2]]
+		]
+	]
+
+	~: make op! :almost
+
 	normalize: function [a [point2D! point3D!] return: [point2D!]][
 		if point2D? a [a: to-polar a]
 		to-complex reduce [a/1 a/2]
