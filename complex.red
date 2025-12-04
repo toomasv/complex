@@ -21,11 +21,11 @@ system/lexer/pre-load: function [src len][
 	upper: charset [#"A" - #"Z"]
 	lower: charset [#"a" - #"z"]
 	alpha: union upper lower
-	word: [some alpha opt int]
+	;word: [some alpha opt int]
 	const: ["pi" | "e" | "i"]
 	value: [int | const]
 	ws: charset { ^/^-)]}
-	ratio: [value #"/" value e:]
+	ratio: [value #"/" value  ahead ws e:]
 	parse src [
 		some [
 			ahead ratio s: 
